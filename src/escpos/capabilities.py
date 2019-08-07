@@ -22,7 +22,7 @@ capabilities_path = environ.get(
 # Load external printer database
 t0 = time.time()
 logger.debug('Using capabilities from file: %s', capabilities_path)
-if path.exists(pickle_path):
+if path.exists(pickle_path) and path.getsize(pickle_path) > 0:
     if path.getmtime(capabilities_path) > path.getmtime(pickle_path):
         logger.debug('Found a more recent capabilities file')
         full_load = True
