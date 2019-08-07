@@ -841,7 +841,7 @@ class Escpos(object):
         :rtype: array(integer)
         """
         self._raw(mode)
-        time.sleep(1)
+        # time.sleep(1)
         status = self._read()
         return status
 
